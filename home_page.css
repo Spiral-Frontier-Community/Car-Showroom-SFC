@@ -159,20 +159,12 @@ body {
 }
 
 .hero__content {
-    right: 100px;
-    position: relative;
-    z-index: 3;
     margin-top: 2rem;
-
-}
-
-.hero__contentc {
-    bottom: 99px;
-    right: -100px;
-    position: relative;
-    z-index: 3;
-    margin-top: 2rem;
-
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 
 .hero__contact {
