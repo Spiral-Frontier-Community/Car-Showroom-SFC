@@ -121,6 +121,7 @@ body {
     text-align: center;
     padding: 8rem 2rem;
     overflow: hidden;
+    padding-top: 0;
 }
 
 .hero__background-text {
