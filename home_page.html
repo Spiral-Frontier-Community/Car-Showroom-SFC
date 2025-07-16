@@ -1,89 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ARKN</title>
-    <meta name="description"
-        content="Discover premium vehicles at ARKN. Browse our collection and book your test drive today." />
+    <meta
+      name="description"
+      content="Discover premium vehicles at ARKN. Browse our collection and book your test drive today."
+    />
     <link rel="stylesheet" href="home_page.css" />
     <script src="home_page.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Header / Navigation -->
     <header class="header" role="banner">
-        <nav class="nav container" role="navigation" aria-label="Main navigation">
-            <a class="nav__logo">ARKN </a>
-            <button class="nav__toggle" aria-label="Toggle menu">
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav__list">
-                <li class="nav__item"><a href="#about" class="nav__link">About Us</a></li>
-                <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-            </ul>
-        </nav>
+      <nav class="nav container" role="navigation" aria-label="Main navigation">
+        <a class="nav__logo">ARKN </a>
+        <button class="nav__toggle" aria-label="Toggle menu">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About Us</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contact" class="nav__link">Contact</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
+      <!-- Hero Section -->
+      <section class="hero">
         <div class="hero__background-text"><b id="car-model-name"></b></div>
         <div class="hero__background-int"><b id="car-model-number"></b></div>
 
         <div class="hero__slider">
-            <img src="" alt="Car Image" class="hero__car" id="car-image">
+          <a class="detail-btn" id="detail-btn">
+            <img src="" alt="Car Image" class="hero__car" id="car-image" />
+          </a>
         </div>
-        <button class="hero__slider-btn hero__slider-btn--left" id="prev-btn">&lt;</button>
-        <button class="hero__slider-btn hero__slider-btn--right" id="next-btn">&gt;</button>
+        <button class="hero__slider-btn hero__slider-btn--left" id="prev-btn">
+          &lt;
+        </button>
+        <button class="hero__slider-btn hero__slider-btn--right" id="next-btn">
+          &gt;
+        </button>
 
         <div class="hero__content">
-            <a href="#" class="btn">RENT NOW</a>
-            <a href="#" class="btnc">DETAILS</a>
+          <a href="#" class="btn">RENT NOW</a>
+          <a href="#" class="btnc">DETAILS</a>
         </div>
-        </section>
+      </section>
 
-        <!-- About Section -->
-        <section id="about" class="about container">
-            <h2 class="section__title">About Elite Car Showroom</h2>
-            <p class="about__text">
-                With over 20 years of expertise, we deliver a curated selection of high-end
-                vehicles and outstanding customer service. Your satisfaction is our commitment.
-            </p>
-        </section>
+      <!-- About Section -->
+      <section id="about" class="about container">
+        <h2 class="section__title">About Elite Car Showroom</h2>
+        <p class="about__text">
+          With over 20 years of expertise, we deliver a curated selection of
+          high-end vehicles and outstanding customer service. Your satisfaction
+          is our commitment.
+        </p>
+      </section>
 
-        <!-- Contact / Lead Capture -->
-        <section id="contact" class="contact container">
-            <h2 class="section__title">Get in Touch</h2>
-            <form action="/contact" method="POST" class="contact__form" novalidate>
-                <div class="form-group">
-                    <label for="contact-name">Name</label>
-                    <input type="text" id="contact-name" name="name" required />
-                </div>
-                <div class="form-group">
-                    <label for="contact-email">Email</label>
-                    <input type="email" id="contact-email" name="email" required />
-                </div>
-                <div class="form-group">
-                    <label for="contact-message">Message</label>
-                    <textarea id="contact-message" name="message" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn--primary">Send Message</button>
-            </form>
-        </section>
+      <!-- Contact / Lead Capture -->
+      <section id="contact" class="contact container">
+        <h2 class="section__title">Get in Touch</h2>
+        <form action="/contact" method="POST" class="contact__form" novalidate>
+          <div class="form-group">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea
+              id="contact-message"
+              name="message"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Send Message</button>
+        </form>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer container" role="contentinfo">
-        <p>&copy; 2025 Elite Car Showroom. All rights reserved.</p>
-        <ul class="social-links">
-            <li><a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a></li>
-            <li><a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a></li>
-            <li><a href="#" aria-label="LINE"><i class="icon-line"></i></a></li>
-        </ul>
+      <p>&copy; 2025 Elite Car Showroom. All rights reserved.</p>
+      <ul class="social-links">
+        <li>
+          <a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a>
+        </li>
+        <li>
+          <a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a>
+        </li>
+        <li>
+          <a href="#" aria-label="LINE"><i class="icon-line"></i></a>
+        </li>
+      </ul>
     </footer>
-</body>
-
+  </body>
 </html>

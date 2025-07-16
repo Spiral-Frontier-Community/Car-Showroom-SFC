@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Car Details - Clean & Sporty</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background-color: #fafafa;
+      color: #222;
+      font-family: 'Open Sans', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    .car-details {
+      background-color: #fff;
+      max-width: 600px;
+      width: 100%;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .car-details:hover {
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    #car-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      color: #111;
+      text-transform: uppercase;
+    }
+
+    h2, p {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin: 15px 0 10px;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
+
+    h2 span, p span {
+      color: #f05a28; /* sporty accent: warm orange */
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+    .car-image {
+      margin-top: 30px;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(240, 90, 40, 0.15);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .car-image:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-back {
+      margin-top: 40px;
+      padding: 12px 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      color: #f05a28;
+      background-color: transparent;
+      border: 2px solid #990000;
+      border-radius: 30px;
+      text-decoration: none;
+      letter-spacing: 1.5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: inline-block;
+      user-select: none;
+    }
+
+    .btn-back:hover,
+    .btn-back:focus {
+      background-color: #f02828;
+      color: #fff;
+      outline: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="car-details">
+    <h1 id="car-name">Loading...</h1>
+    <h2>Model: <span id="car-number"></span></h2>
+    <p>Price: <span id="car-price"></span></p>
+    <img id="car-image" class="car-image" src="" alt="Car Image" />
+  </div>
+
+  <a href="home_page.html" class="btn-back" role="button" tabindex="0">Go Back</a>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const encoded = params.get('data');
+
+    if (encoded) {
+      try {
+        const decodedCar = JSON.parse(atob(decodeURIComponent(encoded)));
+        document.getElementById('car-name').textContent = decodedCar.name || 'Unknown';
+        document.getElementById('car-number').textContent = decodedCar.number || 'N/A';
+        document.getElementById('car-price').textContent = decodedCar.price ? `$${decodedCar.price}` : 'Not listed';
+        document.getElementById('car-image').src = decodedCar.image || '';
+        document.getElementById('car-image').alt = decodedCar.name || 'Car Image';
+      } catch (e) {
+        document.getElementById('car-name').textContent = 'Invalid or corrupted data.';
+      }
+    } else {
+      document.getElementById('car-name').textContent = 'No car data provided.';
+    }
+  </script>
+</body>
+</html>
