@@ -30,19 +30,21 @@
     <main>
         <!-- Hero Section -->
         <section class="hero">
-        <div class="hero__background-text"><b id="car-model-name"></b></div>
-        <div class="hero__background-int"><b id="car-model-number"></b></div>
+            <div class="hero__slider_text">
+                <div class="hero__background-text"><b id="car-model-name"></b></div>
+                <div class="hero__background-int"><b id="car-model-number"></b></div>
+            </div>
+            
+            <div class="hero__slider">
+                <img src="" alt="Car Image" class="hero__car" id="car-image">
+            </div>
+            <button class="hero__slider-btn hero__slider-btn--left" id="prev-btn">&lt;</button>
+            <button class="hero__slider-btn hero__slider-btn--right" id="next-btn">&gt;</button>
 
-        <div class="hero__slider">
-            <img src="" alt="Car Image" class="hero__car" id="car-image">
-        </div>
-        <button class="hero__slider-btn hero__slider-btn--left" id="prev-btn">&lt;</button>
-        <button class="hero__slider-btn hero__slider-btn--right" id="next-btn">&gt;</button>
-
-        <div class="hero__content">
-            <a href="#" class="btn">RENT NOW</a>
-            <a href="#" class="btnc">DETAILS</a>
-        </div>
+            <div class="hero__content">
+                <a href="#" class="btn">RENT NOW</a>
+                <a href="#" class="btnc">DETAILS</a>
+            </div>
         </section>
 
         <!-- About Section -->
@@ -77,6 +79,7 @@
 
     <!-- Footer -->
     <footer class="footer container" role="contentinfo">
+        <!-- The &copy; is an HTML entity for the copyright symbol -->
         <p>&copy; 2025 Elite Car Showroom. All rights reserved.</p>
         <ul class="social-links">
             <li><a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a></li>

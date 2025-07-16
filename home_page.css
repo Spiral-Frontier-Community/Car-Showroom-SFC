@@ -48,7 +48,10 @@ body {
     top: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: saturate(180%) blur(10px);
+    backdrop-filter: saturate(200%) blur(8px);
+    border-color: #000000;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
 
@@ -125,20 +128,19 @@ body {
 }
 
 .hero__background-text {
-  font-size: 5rem;
+  font-size: 6rem;
   text-align: center;
   margin-top: 2rem;
   font-weight: 900;
   color: #000000;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.35rem;
 }
 
 .hero__background-int {
-  font-size: 2rem;
+  font-size: 4rem;
   text-align: center;
   font-weight: 600;
   color: #000000;
-  margin-bottom: 1rem;
 }
 
 .hero__car {
@@ -165,13 +167,19 @@ body {
 }
 
 .hero__slider {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  transition: transform 0.5s ease-in-out;
-  will-change: transform;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
 }
+
+.hero__slider_text {
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
 .hero__slider-btn {
   position: absolute;
   top: 50%;
@@ -313,6 +321,8 @@ body {
     text-align: center;
     background: var(--color-dark);
     color: var(--color-secondary);
+    margin-bottom:0;
+    width:100%;
 }
 
 .footer p {
