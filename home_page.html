@@ -16,13 +16,11 @@
     <!-- Header / Navigation -->
     <header class="header" role="banner">
         <nav class="nav container" role="navigation" aria-label="Main navigation">
-            <a href="/" class="nav__logo">ARKN
-            </a>
+            <a class="nav__logo">ARKN </a>
             <button class="nav__toggle" aria-label="Toggle menu">
                 <span class="hamburger"></span>
             </button>
             <ul class="nav__list">
-                <li class="nav__item"><a href="#inventory" class="nav__link">Inventory</a></li>
                 <li class="nav__item"><a href="#about" class="nav__link">About Us</a></li>
                 <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
             </ul>
@@ -32,36 +30,19 @@
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <div class="hero__background-text"><b>Porscheasd</b>
-            </div>
-            <div class="hero__background-int"><b>911</b>
-            </div>
+        <div class="hero__background-text"><b id="car-model-name"></b></div>
+        <div class="hero__background-int"><b id="car-model-number"></b></div>
 
-            <img src="images/pngwing.com.png" alt="Porsche Car" class="hero__car" />
+        <div class="hero__slider">
+            <img src="" alt="Car Image" class="hero__car" id="car-image">
+        </div>
+        <button class="hero__slider-btn hero__slider-btn--left" id="prev-btn">&lt;</button>
+        <button class="hero__slider-btn hero__slider-btn--right" id="next-btn">&gt;</button>
 
-            <div class="hero__content">
-                <a href="#" class="btn">RENT NOW</a>
-            </div>
-            <div class="hero__contentc">
-                <a href="#" class="btnc">DETAILS</a>
-            </div>
-        </section>
-        <!-- Inventory Preview -->
-        <section id="inventory" class="inventory container">
-            <h2 class="section__title">Featured Models</h2>
-            <div class="inventory__grid">
-                <!-- Example Car Card -->
-                <article class="car-card">
-                    <img src="https://img.freepik.com/premium-psd/isolated-realistic-metallic-brown-elegant-hyper-sport-modern-sedan-car-from-right-side-view_16145-35838.jpg"
-                        alt="2025 Model X" class="car-card__image" loading="lazy" />
-                    <div class="car-card__details">
-                        <h3 class="car-card__name">2025 Model X</h3>
-                        <p class="car-card__price">$85,000</p>
-                        <a href="detail-model-x.html" class="btn btn--secondary">Learn More</a>
-                    </div>
-                </article>
-                <!-- Repeat car-card for additional models -->
-            </div>
+        <div class="hero__content">
+            <a href="#" class="btn">RENT NOW</a>
+            <a href="#" class="btnc">DETAILS</a>
+        </div>
         </section>
 
         <!-- About Section -->
