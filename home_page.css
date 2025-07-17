@@ -38,7 +38,7 @@ body {
 
 .container {
     max-width: 1200px;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -48,7 +48,10 @@ body {
     top: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: saturate(180%) blur(10px);
+    backdrop-filter: saturate(200%) blur(8px);
+    border-color: #000000;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
 
@@ -119,59 +122,71 @@ body {
     background-color: #ffffff;
     color: #000000;
     text-align: center;
-    padding: 8rem 2rem;
+    padding: 5rem 3rem;
     overflow: hidden;
-    padding-top: 0;
+    padding-top: 2rem;
+    height:100vh;
+    width:100%;
 }
 
 .hero__background-text {
-    font-size: 5rem;
-    text-align: center;
+    font-size: 9rem;
     margin-top: 2rem;
     font-weight: 900;
     color: #000000;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.35rem;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0px 5px 15px rgba(0,0,0,0.4);
 }
 
 .hero__background-int {
-  font-size: 2rem;
-  text-align: center;
-  font-weight: 600;
-  color: #000000;
-  margin-bottom: 1rem;
+    font-size: 5rem;
+    text-align: center;
+    font-weight: 600;
+    color: #000000;
+    margin-top: -4rem;     
+    position: relative;
+    z-index: 2;
+    text-shadow: 0px 5px 15px rgba(0,0,0,0.4);
 }
 
+
 .hero__car {
-  width: 70%;
-  max-width: 800px;
-  height: auto;
-  pointer-events: none;
-  user-select: none;
+    width: 70%;
+    max-width: 800px;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+    position: relative;
+    margin-top: 2vh;
 }
 
 .hero__content {
-    margin-top: 2rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
-}
-
-.hero__contact {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    opacity: 0.7;
+    margin-top:-5vh;
 }
 
 .hero__slider {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  transition: transform 0.5s ease-in-out;
-  will-change: transform;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+    margin-top: -12rem;     
+    z-index: 1;
 }
+
+.hero__slider_text {
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
 .hero__slider-btn {
   position: absolute;
   top: 50%;
@@ -188,11 +203,13 @@ body {
 }
 
 .hero__slider-btn--left {
-  left: 0;
+  left: 20px;
+  margin-top:5rem;
 }
 
 .hero__slider-btn--right {
-  right: 0;
+  right: 20px;
+  margin-top:5rem;
 }
 
 .btn {
@@ -260,7 +277,9 @@ body {
     padding: 4rem 0;
     background: var(--color-secondary);
     text-align: center;
-    margin-top: 8rem;
+    margin: 8rem 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .about__text {
@@ -271,48 +290,14 @@ body {
     line-height: 1.8;
 }
 
-/* Contact Section */
-.contact {
-    padding: 4rem 0;
-}
-
-.contact__form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: grid;
-    gap: 1.5rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--color-primary);
-}
-
 /* Footer */
 .footer {
     padding: 2rem 0;
     text-align: center;
     background: var(--color-dark);
     color: var(--color-secondary);
+    margin-bottom:0;
+    width:100vw;
 }
 
 .footer p {
@@ -324,6 +309,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    visibility: visible;
 }
 
 .social-links a {
@@ -336,36 +322,29 @@ body {
     color: var(--color-primary);
 }
 
+/* icons */
+.icon {
+    width: 24px;
+    height: 24px;
+}
 /* Responsive */
 @media (max-width: 768px) {
-    .nav__toggle {
-        display: block;
-    }
+  .hero__background-text {
+    font-size: 4rem;
+    margin-top:15vh;
+  }
 
-    .nav__list {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        background: var(--color-secondary);
-        display: none;
-    }
+  .hero__background-int {
+    font-size: 2rem;
+    margin-top:0.5vh;
+  }
 
-    .nav__list.active {
-        display: flex;
-    }
+  .hero__car {
+    width: 90%;
+    margin-top:-10vh;
+  }
 
-    .inventory__grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero__title {
-        font-size: 2.5rem;
-    }
-
-    .hero__subtitle {
-        font-size: 1rem;
-    }
-
+  .hero__slider {
+    margin-top: -2rem;
+  }
 }
