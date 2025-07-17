@@ -54,13 +54,32 @@ document.querySelectorAll('section').forEach((section) => {
     observer.observe(section);
 });
 
-const carModels = [
-  { name: 'Porsche', number: '911', image: 'Picture/Porsche_carModel.png' },
-  { name: 'Lamborghini', number: 'Aventador', image: 'Picture/Lamborghini_carModel.png' },
-  { name: 'Mercedes', number: 'AMG', image: 'Picture/Mercedes_AMG_carModel.png' },
-];
-
+let carModels = [];
 let currentCarIndex = 0;
+
+fetch('./data/data.json')
+  .then(response => response.json())
+  .then(data => {
+    carModels = data;
+    updateCarInfo();
+  })
+  .catch(err => {
+    console.error('Failed to load car models:', err);
+  });
+
+function updateCarInfo() {
+  if (!carModels.length) return; // safety check
+
+  const currentCar = carModels[currentCarIndex];
+  if (!currentCar) return; // safety check
+
+  carModelNameElement.textContent = currentCar.name;
+  carModelNumberElement.textContent = currentCar.number;
+  carImageElement.src = currentCar.image;
+
+  updateDetailLink();
+}
+
 let isAnimating = false;
 
 const carModelNameElement = document.getElementById('car-model-name');
@@ -69,12 +88,18 @@ const carImageElement = document.getElementById('car-image');
 const prevButton = document.getElementById('prev-btn');
 const nextButton = document.getElementById('next-btn');
 const slider = document.querySelector('.hero__slider');
+const detailButton = document.getElementById('detail-btn');
 
 function updateCarInfo() {
+  if (!carModels.length) return;
   const currentCar = carModels[currentCarIndex];
   carModelNameElement.textContent = currentCar.name;
   carModelNumberElement.textContent = currentCar.number;
   carImageElement.src = currentCar.image;
+}
+
+function preload_nextpage() {
+  console.log(carModels[currentCarIndex]);
 }
 
 function animateSlide(direction) {
@@ -105,6 +130,8 @@ function animateSlide(direction) {
   }, 500);
 }
 
+
+
 prevButton.addEventListener('click', () => {
   currentCarIndex = (currentCarIndex - 1 + carModels.length) % carModels.length;
   animateSlide(-1);
@@ -114,5 +141,14 @@ nextButton.addEventListener('click', () => {
   currentCarIndex = (currentCarIndex + 1) % carModels.length;
   animateSlide(1);
 });
+
+detailButton.addEventListener('click', () => {
+  const car = carModels[currentCarIndex];
+  const data = btoa(JSON.stringify(car)); // Base64 encode
+  detailButton.href = `detail_page.html?data=${encodeURIComponent(data)}`;
+});
+
+
+
 
 updateCarInfo();

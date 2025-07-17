@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Porsche",
+    "number": "911",
+    "image": "Picture/Porsche_carModel.png",
+    "price": "20M"
+  },
+  {
+    "name": "Lamborghini",
+    "number": "Aventador",
+    "image": "Picture/Lamborghini_carModel.png",
+    "price": "20M"
+  },
+  {
+    "name": "Mercedes",
+    "number": "AMG",
+    "image": "Picture/Mercedes_AMG_carModel.png",
+    "price": "20M"
+  }
+]
